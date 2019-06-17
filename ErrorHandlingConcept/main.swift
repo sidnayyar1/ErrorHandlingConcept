@@ -45,17 +45,25 @@ do{
     print(e.employeeId)
        
     }
-    try e4?.setSalary(salary: 700)
+    try e4!.setSalary(salary: 700)
+    
+    print(e4!.employeeSalary)
+    
+}
+    
+catch EmployeeError.InvalidSalary(let msg){
+    
+    print(msg)
     
 }
     catch EmployeeError.InvalidEmail
     {
         print("invalid Email")
 }
-catch EmployeeError.InvalidSalary(msg: "Error" ){
+catch EmployeeError.InvalidSalary(let msg){
     
-    print(msg.self)
-    
+    print(msg)
+    //print(msg.self)
 }
 catch{
 

@@ -37,10 +37,11 @@ class Employee {
         self.employeeSalary = employeeSalary
     }
 
-    func setSalary(salary: Double)
+    func setSalary(salary: Double) throws
     {
         if salary<1000 {
         
+            throw EmployeeError.InvalidSalary(msg: "Invalid Salary: , \(salary) < 1000")
          //   throw EmployeeError.InvalidSalary
         }
         
